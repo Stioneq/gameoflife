@@ -1,0 +1,17 @@
+:host {
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  app-header{
+    height: 50px;
+  }
+  app-game-board {
+    width: 100%;
+    flex: 1 0 auto;
+    background: gainsboro;
+    display: flex;
+
+
+  }
+}

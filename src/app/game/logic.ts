@@ -39,23 +39,15 @@ function getValue(cells, i, j) {
   return cells[i][j];
 }
 
-function* neighBours(cells, i, j): any {
-  yield getValue(cells, i + 1, j - 1);
-  yield getValue(cells, i + 1, j);
-  yield getValue(cells, i + 1, j + 1);
-  yield getValue(cells, i, j + 1);
-  yield getValue(cells, i - 1, j + 1);
-  yield getValue(cells, i - 1, j);
-  yield getValue(cells, i - 1, j - 1);
-  yield getValue(cells, i, j - 1);
-}
 
 function getAliveNeighbours(cells, i, j) {
-  let sum = 0;
-  for (const nb of neighBours(cells, i, j)) {
-    sum += nb;
-  }
-  return sum;
+  return getValue(cells, i + 1, j - 1) +
+    getValue(cells, i + 1, j) +
+    getValue(cells, i + 1, j + 1) +
+    getValue(cells, i, j + 1) +
+    getValue(cells, i - 1, j + 1) +
+    getValue(cells, i - 1, j) +
+    getValue(cells, i - 1, j - 1) +
+    getValue(cells, i, j - 1);
 }
-
 
